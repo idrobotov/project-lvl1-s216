@@ -22,13 +22,20 @@
   "scripts": {
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "eslint": "eslint",
     "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
+    "babel-eslint": "^8.1.2",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
-    "readline-sync": "^1.4.7"
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
   }
 }
