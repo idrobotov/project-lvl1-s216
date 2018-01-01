@@ -2,7 +2,7 @@
   "name": "project-lvl1-s216",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -28,6 +28,7 @@
     "babel-cli": "*",
     "babel-core": "*",
     "babel-preset-env": "*",
-    "babel-preset-stage-0": "*"
+    "babel-preset-stage-0": "*",
+    "readline-sync": "^1.4.7"
   }
 }
