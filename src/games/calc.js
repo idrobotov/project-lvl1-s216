@@ -1,9 +1,9 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
-import askName from './';
-import getRandomInt from './getRandomInt';
-import getRandomOperator from './getRandomOperator';
-import calcOperations from './calcOperations';
+import askName from '../';
+import getRandomInt from '../getRandomInt';
+import getRandomOperator from '../getRandomOperator';
+import calcOperations from '../calcOperations';
 
 console.log('Welcome to the Brain Games!');
 console.log('What is the result of the expression?\n');

@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import askName from './';
-import modCheck from './modCheck';
-import getRandomInt from './getRandomInt';
+import askName from '../';
+import modCheck from '../modCheck';
+import getRandomInt from '../getRandomInt';
 
 console.log('Welcome to the Brain Games!');
 console.log('Answer "yes" if number even otherwise answer "no".\n');
