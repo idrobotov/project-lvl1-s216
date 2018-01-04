@@ -1,35 +1,30 @@
-import readlineSync from 'readline-sync';
-import askName from '../';
-import modCheck from '../modCheck';
+import { cons } from 'hexlet-pairs';
+import runGame from '..';
 import getRandomInt from '../getRandomInt';
 
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if number even otherwise answer "no".\n');
-
-const userName = askName();
-
-const questionNum = 3; // number of questions in the game
+const modCheck = (num) => {
+  if (num % 2 === 0) {
+    return true;
+  }
+  return false;
+};
 
 const evenGame = () => {
-  let times = questionNum;
-  while (times !== 0) {
-    const num = getRandomInt(1, 20);
-    console.log(`Question: ${num}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+  const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
-    if ((userAnswer === 'yes' && modCheck(num)) || (userAnswer === 'no' && !modCheck(num))) {
-      console.log('Correct!');
-      times -= 1;
-    } else {
-      if (userAnswer === 'yes') { console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.\n'); }
-      if (userAnswer === 'no') { console.log('\'no\' is wrong answer ;(. Correct answer was \'yes\'.\n'); }
-      console.log(`Let's try again, ${userName}!`);
-      times = questionNum;
-    }
-  }
-  if (times === 0) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  const even = () => {
+    const num = getRandomInt(1, 20);
+    const expected = (number) => {
+      if (modCheck(number)) {
+        return 'yes';
+      }
+      return 'no';
+    };
+    const question = `${num}`;
+    return cons(question, expected(num));
+  };
+
+  runGame(description, even);
 };
 
 export default evenGame;
