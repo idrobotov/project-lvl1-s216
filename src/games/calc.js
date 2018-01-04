@@ -1,8 +1,36 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import runGame from '..';
 import getRandomInt from '../getRandomInt';
-import getRandomOperator from '../getRandomOperator';
-import calcOperations from '../calcOperations';
+
+const operations = {
+  '+': (operand1, operand2) => (operand1 + operand2),
+  '-': (operand1, operand2) => (operand1 - operand2),
+  '*': (operand1, operand2) => (operand1 * operand2),
+};
+
+const calcOperations = (list, operator) => list.reduce(operations[operator]);
+
+/** This functions returns random operation: "+", "-" or "*"  */
+const getRandomOperator = () => {
+  let result = '';
+  const num = getRandomInt(1, 3);
+
+  switch (num) {
+    case 1:
+      result = '+';
+      break;
+    case 2:
+      result = '-';
+      break;
+    case 3:
+      result = '*';
+      break;
+    default:
+      result = '+';
+  }
+
+  return result;
+};
 
 const calcGame = () => {
   const description = 'What is the result of the expression?\n';
