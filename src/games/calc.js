@@ -33,7 +33,7 @@ const getRandomOperator = () => {
 };
 
 const calcGame = () => {
-  const description = 'What is the result of the expression?\n';
+  const description = 'What is the result of the expression?';
   const gameData = () => {
     const pair = cons(getRandomInt(1, 50), getRandomInt(1, 50));
     const operator = getRandomOperator();

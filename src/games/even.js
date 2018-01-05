@@ -10,7 +10,7 @@ const modCheck = (num) => {
 };
 
 const evenGame = () => {
-  const description = 'Answer "yes" if number even otherwise answer "no".\n';
+  const description = 'Answer "yes" if number even otherwise answer "no".';
 
   const gameData = () => {
     const num = getRandomInt(1, 20);

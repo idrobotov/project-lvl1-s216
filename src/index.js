@@ -5,13 +5,13 @@ const questionNum = 3; // number of questions in the game
 
 const askName = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  console.log(`Hello, ${userName}!\n`);
   return userName;
 };
 
 const runGame = (description, game) => {
   console.log('Welcome to the Brain Games!');
-  console.log(description);
+  console.log(`${description}\n`);
 
   const userName = askName();
   let times = questionNum;

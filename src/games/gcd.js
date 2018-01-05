@@ -6,7 +6,7 @@ import getRandomInt from '../getRandomInt';
 const getGcd = (a, b) => (b ? getGcd(b, a % b) : a);
 
 const gcdGame = () => {
-  const description = 'Find the greatest common divisor of given numbers.\n';
+  const description = 'Find the greatest common divisor of given numbers.';
 
   const gameData = () => {
     const num1 = getRandomInt(1, 100);

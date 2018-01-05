@@ -18,7 +18,7 @@ const getBalance = (num) => {
 };
 
 const balanceGame = () => {
-  const description = 'Balance the given number.\n';
+  const description = 'Balance the given number.';
 
   const gameData = () => {
     const num = getRandomInt(1, 5000);
