@@ -12,19 +12,19 @@ const modCheck = (num) => {
 const evenGame = () => {
   const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
-  const even = () => {
+  const gameData = () => {
     const num = getRandomInt(1, 20);
-    const expected = (number) => {
+    const answer = (number) => {
       if (modCheck(number)) {
         return 'yes';
       }
       return 'no';
     };
     const question = `${num}`;
-    return cons(question, expected(num));
+    return cons(question, answer(num));
   };
 
-  runGame(description, even);
+  runGame(description, gameData);
 };
 
 export default evenGame;

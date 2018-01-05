@@ -34,15 +34,15 @@ const getRandomOperator = () => {
 
 const calcGame = () => {
   const description = 'What is the result of the expression?\n';
-  const calculate = () => {
+  const gameData = () => {
     const pair = cons(getRandomInt(1, 50), getRandomInt(1, 50));
     const operator = getRandomOperator();
-    const expected = calcOperations([car(pair), cdr(pair)], operator);
+    const answer = calcOperations([car(pair), cdr(pair)], operator);
     const question = `${car(pair)} ${operator} ${cdr(pair)}`;
-    return cons(question, expected);
+    return cons(question, answer);
   };
 
-  runGame(description, calculate);
+  runGame(description, gameData);
 };
 
 export default calcGame;

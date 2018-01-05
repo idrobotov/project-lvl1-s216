@@ -1,4 +1,4 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import runGame from '..';
 import getRandomInt from '../getRandomInt';
 
@@ -8,14 +8,16 @@ const getGcd = (a, b) => (b ? getGcd(b, a % b) : a);
 const gcdGame = () => {
   const description = 'Find the greatest common divisor of given numbers.\n';
 
-  const gcdCalc = () => {
-    const pair = cons(getRandomInt(1, 100), getRandomInt(1, 100));
-    const expected = getGcd(car(pair), cdr(pair));
-    const question = `${car(pair)} ${cdr(pair)}`;
-    return cons(question, expected);
+  const gameData = () => {
+    const num1 = getRandomInt(1, 100);
+    const num2 = getRandomInt(1, 100);
+
+    const answer = getGcd(num1, num2);
+    const question = `${num1} ${num2}`;
+    return cons(question, answer);
   };
 
-  runGame(description, gcdCalc);
+  runGame(description, gameData);
 };
 
 export default gcdGame;
