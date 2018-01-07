@@ -13,7 +13,7 @@ const runGame = (description, game) => {
 
   const userName = askName();
   let times = 3; // number of questions in the game
-  while (times > 0) {
+  while (times !== 0) {
     const gameState = game();
     console.log(`Question: ${car(gameState)}`);
     const userAnswer = readlineSync.question('Your answer: ');
