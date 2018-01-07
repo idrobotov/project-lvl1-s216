@@ -9,10 +9,10 @@ const findProgressionMember = (startNum, step, n) => {
   return startNum;
 };
 
-const generateProgression = (startNum, step, hidedIndex, n) => {
+const generateProgression = (startNum, step, hidden, n) => {
   let progression = '';
   for (let i = 1; i <= n; i += 1) {
-    if (i === hidedIndex) {
+    if (i === hidden) {
       progression += '.. ';
     } else {
       progression += `${findProgressionMember(startNum, step, i)} `;
@@ -29,10 +29,10 @@ const progressionGame = () => {
     const startNum = getRandomInt(1, 1000);
     const step = getRandomInt(1, 20);
     const n = 10;
-    const hidedIndex = getRandomInt(1, n);
+    const hidden = getRandomInt(1, n);
 
-    const answer = findProgressionMember(startNum, step, hidedIndex);
-    const question = generateProgression(startNum, step, hidedIndex, n);
+    const answer = findProgressionMember(startNum, step, hidden);
+    const question = generateProgression(startNum, step, hidden, n);
     return cons(question, answer);
   };
 
